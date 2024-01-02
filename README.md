@@ -60,8 +60,8 @@ Essas são algumas capturas de tela do projeto para dar uma ideia visual do que 
 
 ## Estrutura do Projeto
 
-- 📁 **assets**: Diretório para imagens e outros recursos visuais.
-  - **images**: imagens utilizadas no projeto, incluindo a logo.
+- 📁 **assets/images**: Diretório para imagens e outros recursos visuais.
+  - **background**: imagens utilizadas no projeto, incluindo a logo.
   - **screenshots**: captura de telas.
  
 - 📁 **css**: Contém a folha de estilo (CSS) do projeto.
