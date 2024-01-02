@@ -9,3 +9,4 @@
 {"id":"6594622bace96","nome":"Leuzo Pluma","nomeSocial":"","apelido":"Xaexe","cpf":"","telefone":"(79) 21895-285","email":"gyongyi2710@uorak.com","favorito":"on"}
 {"id":"6594635b70836","nome":"Texal Toeke","nomeSocial":"Razo","apelido":"Raz","cpf":"103.056.900-27","telefone":"(96) 93297-1682","email":"efe8837@uorak.com","favorito":"on"}
 {"id":"659471377d50f","nome":"Arka Pinthir","nomeSocial":"","apelido":"Pin","cpf":"226.089.190-06","telefone":"(54) 32919-349","email":"carola9042@uorak.com","favorito":"on"}
+{"id":"65948bc762e1e","nome":"Hioride","nomeSocial":"","apelido":"HIO","cpf":"","telefone":"(11) 87878-6527","email":"cesareo8239@uorak.com","favorito":"on"}

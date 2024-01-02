@@ -30,90 +30,95 @@
 
     <nav class="navbar" id="sidebar">
       <ul>
-        <li onclick="window.location.href='../index.php'">
+        <li onclick="window.location.href='../index.html'">
           <i class="fa-solid fa-house"></i>
           <span class="lbl-menu hide"> Home</span>
         </li>
-        <li onclick="window.location.href='../pages/contatos.php'">
+        <li onclick="window.location.href='register.html'">
           <i class="fa-regular fa-address-card"></i>
           <span class="lbl-menu hide"> Novo Contato</span>
         </li>
-        <li onclick="window.location.href='../pages/contatos.php'">
+        <li onclick="window.location.href='contatos.php'">
           <i class="fa-regular fa-address-book"></i>
           <span class="lbl-menu hide"> Meus Contatos</span>
         </li>
+        <li onclick="window.location.href='../index.php'">
+          <i class="fa-solid fa-heart"></i>
+          <span class="lbl-menu hide"> Meus Favoritos</span>
+        </li>
       </ul>
+
     </nav>
 
     <div class="box-img-friend">
-    <div class="main-register">
-      <div class="card-novocontato">
+      <div class="main-register">
+        <div class="card-novocontato">
+          <!-- <img src="../assets/images/newFriend.svg" alt=""> -->
+          <p class="titulo-card">Dados pessoais</p>
+          <form id="form-contato" action="../includes/search.php" onsubmit="return validarFormulario()" method="post">
+
+            <div class="box-inputs-register">
+              <div class="box-input">
+                <label for="nome">Nome Completo</label>
+                <input class="input" type="text" name="nome" />
+
+                <span class="input-border input-border-alt"></span>
+              </div>
+
+              <div class="box-input">
+                <label for="nomeSocial">Nome Social</label>
+                <input class="input" type="text" name="nomeSocial" />
+
+                <span class="input-border input-border-alt"></span>
+              </div>
+
+
+              <div class="box-input">
+                <label for="apelido">Apelido</label>
+                <input class="input" type="text" name="apelido" />
+
+                <span class="input-border input-border-alt"></span>
+              </div>
+
+              <div class="box-input">
+                <label for="cpf">CPF</label>
+                <input class="input" type="tel" name="cpf" id="cpf" />
+
+                <span class="input-border input-border-alt"></span>
+              </div>
+            </div>
+            <p class="titulo-card">Contatos</p>
+            <div class="box-inputs-register">
+              <div class="box-input box-telefone">
+                <label for="telefone">Telefone</label>
+                <input class="input" type="tel" name="tel" id="tel" />
+
+                <span class="input-border input-border-alt"></span>
+              </div>
+
+              <div class="box-input">
+                <label for="email">E-mail</label>
+                <input class="input" type="email" name="email" />
+
+                <span class="input-border input-border-alt"></span>
+              </div>
+
+            </div>
+            <label class="checkboxFav">
+              <input type="checkbox" name="fav">
+              <div class="checkmark"></div>
+              <span>Adicionar aos favoritos</span>
+            </label>
+
+
+            <button class="btn-padrao">Salvar</button>
+
+          </form>
+        </div>
         <!-- <img src="../assets/images/newFriend.svg" alt=""> -->
-        <p class="titulo-card">Dados pessoais</p>
-        <form id="form-contato" action="../includes/search.php" onsubmit="return validarFormulario()" method="post">
-
-          <div class="box-inputs-register">
-            <div class="box-input">
-              <label for="nome">Nome Completo</label>
-              <input class="input" type="text" name="nome" />
-
-              <span class="input-border input-border-alt"></span>
-            </div>
-
-            <div class="box-input">
-              <label for="nomeSocial">Nome Social</label>
-              <input class="input" type="text" name="nomeSocial" />
-
-              <span class="input-border input-border-alt"></span>
-            </div>
-
-
-            <div class="box-input">
-              <label for="apelido">Apelido</label>
-              <input class="input" type="text" name="apelido" />
-
-              <span class="input-border input-border-alt"></span>
-            </div>
-
-            <div class="box-input">
-              <label for="cpf">CPF</label>
-              <input class="input" type="tel" name="cpf" id="cpf" />
-
-              <span class="input-border input-border-alt"></span>
-            </div>
-          </div>
-          <p class="titulo-card">Contatos</p>
-          <div class="box-inputs-register">
-            <div class="box-input box-telefone">
-              <label for="telefone">Telefone</label>
-              <input class="input" type="tel" name="tel" id="tel" />
-
-              <span class="input-border input-border-alt"></span>
-            </div>
-
-            <div class="box-input">
-              <label for="email">E-mail</label>
-              <input class="input" type="email" name="email" />
-
-              <span class="input-border input-border-alt"></span>
-            </div>
-
-          </div>
-          <label class="checkboxFav">
-            <input type="checkbox" name="fav">
-            <div class="checkmark"></div>
-            <span>Adicionar aos favoritos</span>
-          </label>
-
-
-          <button class="btn-padrao">Salvar</button>
-
-        </form>
       </div>
-      <!-- <img src="../assets/images/newFriend.svg" alt=""> -->
-    </div>
 
-  </div>
+    </div>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"
     integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw=="

@@ -48,6 +48,27 @@ header {
     background-color: #ccc;
 }
 
+#boas-vindas{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;   
+    padding: 1em;
+    gap: 1em;
+    color: var(--purple);
+    text-align: center;
+
+}
+
+#boas-vindas h1, h2{
+    font-size: 17px;
+}
+
+#boas-vindas img{
+    width: 50%;
+}
+
+
 .logo {
     max-width: 100px;
 }
@@ -758,3 +779,4 @@ width: 50%;
     background-position: right bottom;
     background-repeat: no-repeat;
 }
+

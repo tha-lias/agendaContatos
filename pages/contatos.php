@@ -93,153 +93,155 @@ $contatosFiltrados = array_slice($contatosFiltrados, $offset, $limit);
 
     <nav class="navbar" id="sidebar">
       <ul>
-        <li onclick="window.location.href='../index.php'">
+        <li onclick="window.location.href='../index.html'">
           <i class="fa-solid fa-house"></i>
           <span class="lbl-menu hide"> Home</span>
         </li>
-        <li onclick="window.location.href='../pages/register.html'">
+        <li onclick="window.location.href='register.html'">
           <i class="fa-regular fa-address-card"></i>
           <span class="lbl-menu hide"> Novo Contato</span>
         </li>
-        <li onclick="window.location.href='../pages/contatos.php'">
+        <li onclick="window.location.href='contatos.php'">
           <i class="fa-regular fa-address-book"></i>
           <span class="lbl-menu hide"> Meus Contatos</span>
+        </li>
+        <li onclick="window.location.href='../index.php'">
+        <i class="fa-solid fa-heart"></i>
+          <span class="lbl-menu hide"> Favoritos</span>
         </li>
       </ul>
     </nav>
 
     <div class="box-img-friend" style="background-image: url(../assets/images/friendsa.svg);">
 
-    <div class="main-register">
-      <form method="get" class="form-search">
-        <div class="search-box">
-          <div class="search-field">
-            <input placeholder="Filtrar por nome..." class="inputSearch" type="text" name="encontrar" value="<?php echo isset($_GET['encontrar']) ? $_GET['encontrar'] : ''; ?>">
-            <div class="search-box-icon">
-              <button class="btn-icon-content" type="submit">
-                <i class="fa-solid fa-magnifying-glass icon"></i>
-              </button>
+      <div class="main-register">
+        <form method="get" class="form-search">
+          <div class="search-box">
+            <div class="search-field">
+              <input placeholder="Filtrar por nome..." class="inputSearch" type="text" name="encontrar" value="<?php echo isset($_GET['encontrar']) ? $_GET['encontrar'] : ''; ?>">
+              <div class="search-box-icon">
+                <button class="btn-icon-content" type="submit">
+                  <i class="fa-solid fa-magnifying-glass icon"></i>
+                </button>
+              </div>
             </div>
           </div>
+
+        </form>
+
+        <div class="box-contatos">
+          <?php if (!empty($contatosFiltrados) || isset($_GET['encontrar'])) : ?>
+            <?php if (!empty($contatosFiltrados)) : ?>
+              <?php foreach ($contatosFiltrados as $contato) : ?>
+                <div class="card-contato" onclick="abreContato(this);">
+                  <div class="card_load"><i class="fa-solid fa-user"></i></div>
+                  <div class="box-infos">
+                    <div class="card_load_extreme_title"><?php echo exibirNome($contato); ?></div>
+                    <div class="card_load_extreme_descripion">
+                      <p><i class="fa-solid fa-phone"></i> <span><?php echo $contato['telefone']; ?></span></p>
+                      <p class="truncate-email">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span class="email-content"><?php echo $contato['email']; ?></span>
+                      </p>
+                      <?php if ($contato['cpf'] != "") { ?>
+                        <p><i class="fa-solid fa-id-card"></i> <span><?php echo $contato['cpf']; ?></span></p>
+                      <?php } ?>
+                      <?php if ($contato['favorito']) : ?>
+                        <p><i class="fa-solid fa-heart"></i> Favorito</p>
+                      <?php else : ?>
+                        <p><i class="fa-regular fa-heart"></i> Não adicionado aos Favoritos</p>
+                      <?php endif; ?>
+                    </div>
+                  </div>
+
+                </div>
+              <?php endforeach; ?>
+            <?php else : ?>
+              <div class="box-sad">
+                <p>Nenhum contato encontrado para a busca: <?php echo $busca; ?></p>
+                <img src="../assets/images/animate-sad.svg" alt="">
+              </div>
+            <?php endif; ?>
+            <div id="modal" class="modal">
+              <div class="modal-content">
+                <span class="close" onclick="fechaModal()">&times;</span>
+                <div class="card-contato-modal"></div>
+                <div class="btn">
+                  <button class="btn-padrao btn-excluir " onclick="excluirContato(this)">Excluir esse contato</button>
+                </div>
+              </div>
+            </div>
+
+          <?php else : ?>
+            <?php if (!empty($contatos)) : ?>
+              <?php foreach ($contatos as $contato) : ?>
+                <div class="card-contato" onclick="abreContato(this);">
+                  <div class="card_load"></div>
+                  <div class="box-infos">
+                    <div class="card_load_extreme_title"><?php echo exibirNome($contato); ?></div>
+                    <div class="card_load_extreme_descripion">
+                      <p><i class="fa-solid fa-phone"></i> <span><?php echo $contato['telefone']; ?></span></p>
+                      <p class="truncate-email">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span class="email-content"><?php echo $contato['email']; ?></span>
+                      </p>
+                      <?php if ($contato['apelido'] != "") { ?>
+                        <p><i class="fa-solid fa-id-card"></i> <span><?php echo $contato['cpf']; ?></span></p>
+                      <?php } ?>
+                      <?php if ($contato['favorito']) : ?>
+                        <p><i class="fa-solid fa-heart"></i> Favorito</p>
+                      <?php else : ?>
+                        <p><i class="fa-regular fa-heart"></i> Não adicionado aos Favoritos</p>
+                      <?php endif; ?>
+                    </div>
+                  </div>
+                </div>
+              <?php endforeach; ?>
+            <?php else : ?>
+              <div class="box-sad">
+                <p>Nenhum contato encontrado.</p>
+                <img src="../assets/images/animate-sad.svg" alt="">
+              </div>
+            <?php endif; ?>
+          <?php endif; ?>
         </div>
 
-      </form>
+        <div class="pagination">
+          <?php if ($totalPages > 1) : ?>
+            <?php if ($currentPage > 1) : ?>
+              <a href="?page=<?php echo $currentPage - 1; ?>">Anterior</a>
+            <?php endif; ?>
 
-      <div class="box-contatos">
-        <?php if (!empty($contatosFiltrados) || isset($_GET['encontrar'])) : ?>
-          <?php if (!empty($contatosFiltrados)) : ?>
-            <?php foreach ($contatosFiltrados as $contato) : ?>
-              <div class="card-contato" onclick="abreContato(this);">
-                <div class="card_load"><i class="fa-solid fa-user"></i></div>
-                <div class="box-infos">
-                  <div class="card_load_extreme_title"><?php echo exibirNome($contato); ?></div>
-                  <div class="card_load_extreme_descripion">
-                    <p><i class="fa-solid fa-phone"></i> <span><?php echo $contato['telefone']; ?></span></p>
-                    <p class="truncate-email">
-                      <i class="fa-solid fa-envelope"></i>
-                      <span class="email-content"><?php echo $contato['email']; ?></span>
-                    </p>
-                    <?php if ($contato['cpf'] != "") { ?>
-                      <p><i class="fa-solid fa-id-card"></i> <span><?php echo $contato['cpf']; ?></span></p>
-                    <?php } ?>
-                    <?php if ($contato['favorito']) : ?>
-                      <p><i class="fa-solid fa-heart"></i> Favorito</p>
-                    <?php else : ?>
-                      <p><i class="fa-regular fa-heart"></i> Não adicionado aos Favoritos</p>
-                    <?php endif; ?>
-                  </div>
-                </div>
+            <?php for ($i = 1; $i <= $totalPages; $i++) : ?>
+              <a href="?page=<?php echo $i; ?>" <?php echo ($i == $currentPage) ? 'class="active"' : ''; ?>><?php echo $i; ?></a>
+            <?php endfor; ?>
 
-              </div>
-            <?php endforeach; ?>
-          <?php else : ?>
-            <div class="box-sad">
-              <p>Nenhum contato encontrado para a busca: <?php echo $busca; ?></p>
-              <img src="../assets/images/animate-sad.svg" alt="">
-            </div>
+            <?php if ($currentPage < $totalPages) : ?>
+              <a href="?page=<?php echo $currentPage + 1; ?>">Próxima</a>
+            <?php endif; ?>
+
           <?php endif; ?>
-          <div id="modal" class="modal">
-            <div class="modal-content">
-              <span class="close" onclick="fechaModal()">&times;</span>
-              <div class="card-contato-modal"></div>
-              <div class="btn">
-                <button class="btn-padrao btn-excluir " onclick="excluirContato(this)">Excluir esse contato</button>
-              </div>
-            </div>
-          </div>
-
-        <?php else : ?>
-          <?php if (!empty($contatos)) : ?>
-            <?php foreach ($contatos as $contato) : ?>
-              <div class="card-contato" onclick="abreContato(this);">
-                <div class="card_load"></div>
-                <div class="box-infos">
-                  <div class="card_load_extreme_title"><?php echo exibirNome($contato); ?></div>
-                  <div class="card_load_extreme_descripion">
-                    <p><i class="fa-solid fa-phone"></i> <span><?php echo $contato['telefone']; ?></span></p>
-                    <p class="truncate-email">
-                      <i class="fa-solid fa-envelope"></i>
-                      <span class="email-content"><?php echo $contato['email']; ?></span>
-                    </p>
-                    <?php if ($contato['apelido'] != "") { ?>
-                      <p><i class="fa-solid fa-id-card"></i> <span><?php echo $contato['cpf']; ?></span></p>
-                    <?php } ?>
-                    <?php if ($contato['favorito']) : ?>
-                      <p><i class="fa-solid fa-heart"></i> Favorito</p>
-                    <?php else : ?>
-                      <p><i class="fa-regular fa-heart"></i> Não adicionado aos Favoritos</p>
-                    <?php endif; ?>
-                  </div>
-                </div>
-              </div>
-            <?php endforeach; ?>
-          <?php else : ?>
-            <div class="box-sad">
-              <p>Nenhum contato encontrado.</p>
-              <img src="../assets/images/animate-sad.svg" alt="">
-            </div>
-          <?php endif; ?>
-        <?php endif; ?>
-      </div>
-
-      <div class="pagination">
-        <?php if ($totalPages > 1) : ?>
-          <?php if ($currentPage > 1) : ?>
-            <a href="?page=<?php echo $currentPage - 1; ?>">Anterior</a>
-          <?php endif; ?>
-
-          <?php for ($i = 1; $i <= $totalPages; $i++) : ?>
-            <a href="?page=<?php echo $i; ?>" <?php echo ($i == $currentPage) ? 'class="active"' : ''; ?>><?php echo $i; ?></a>
-          <?php endfor; ?>
-
-          <?php if ($currentPage < $totalPages) : ?>
-            <a href="?page=<?php echo $currentPage + 1; ?>">Próxima</a>
-          <?php endif; ?>
-
-        <?php endif; ?>
+        </div>
       </div>
     </div>
-</div>
   </div>
 
-<script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const sucessoParam = urlParams.get('sucesso');
 
-document.addEventListener("DOMContentLoaded", function() {
-  const urlParams = new URLSearchParams(window.location.search);
-  const sucessoParam = urlParams.get('sucesso');
-
-  if (sucessoParam === 'true') {
-    Swal.fire({
-      title: 'Oba! Contato salvo!',
-      text: 'O contato já foi adicionado em sua agenda.',
-      icon: 'success',
-      confirmButtonColor: '#3085d6',
-      confirmButtonText: 'ENTENDI'
+      if (sucessoParam === 'true') {
+        Swal.fire({
+          title: 'Oba! Contato salvo!',
+          text: 'O contato já foi adicionado em sua agenda.',
+          icon: 'success',
+          confirmButtonColor: '#3085d6',
+          confirmButtonText: 'ENTENDI'
+        });
+      }
     });
-  }
-});
-
-</script>
+  </script>
 </body>
 
 </html>

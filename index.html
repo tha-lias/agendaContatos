@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Seja bem vindo(a)!</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./js/script.js"></script>
+
+    <!-- Importar font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <div class="container">
+        <header onclick="window.location.href='index.html'">
+            <img src="./assets/images/logotipo.png" class="logo" />
+            <div class="titulo-header">
+                <h2>Boas vindas!</h2>
+            </div>
+        </header>
+
+        <nav class="navbar" id="sidebar">
+            <ul>
+                <li onclick="window.location.href='index.html'">
+                    <i class="fa-solid fa-house"></i>
+                    <span class="lbl-menu hide"> Home</span>
+                </li>
+                <li onclick="window.location.href='pages/register.html'">
+                    <i class="fa-regular fa-address-card"></i>
+                    <span class="lbl-menu hide"> Novo Contato</span>
+                </li>
+                <li onclick="window.location.href='pages/contatos.php'">
+                    <i class="fa-regular fa-address-book"></i>
+                    <span class="lbl-menu hide"> Meus Contatos</span>
+                </li>
+                <li onclick="window.location.href='index.php'">
+                    <i class="fa-solid fa-heart"></i>
+                    <span class="lbl-menu hide"> Meus Favoritos</span>
+                </li>
+            </ul> 
+        </nav>
+
+        <div class="main-register">
+            <div class="card-novocontato" id="boas-vindas">
+                <h1>Olá, seja bem vindo(a)! 👋</h1>
+                <h2>Explore uma maneira <u>intuitiva</u> e <u>eficiente</u> de gerenciar seus contatos com nosso Sistema de Agenda de Contatos. <br> Estamos empolgados em recebê-lo nesta plataforma projetada para facilitar a organização e o acesso às suas informações de contato de maneira simples e prática. <br> Aproveite! </h2>
+    
+                <img src="assets\images\hi.svg" alt="">
+
+
+                <div class="box-inputs-register">
+
+                </div>
+            </div>
+</body>
+
+</html>

@@ -76,7 +76,7 @@ $contatosFiltrados = array_slice($contatosFiltrados, $offset, $limit);
 <body>
 
     <div class="container">
-        <header onclick="window.location.href='../index.php'">
+        <header onclick="window.location.href='../index.html'">
             <img src="./assets/images/logotipo.png" class="logo" />
             <div class="titulo-header">
                 <h1>Contatos Favoritos</h1>
@@ -85,7 +85,7 @@ $contatosFiltrados = array_slice($contatosFiltrados, $offset, $limit);
 
         <nav class="navbar" id="sidebar">
             <ul>
-                <li onclick="window.location.href='index.php'">
+                <li onclick="window.location.href='index.html'">
                     <i class="fa-solid fa-house"></i>
                     <span class="lbl-menu hide"> Home</span>
                 </li>
@@ -96,6 +96,10 @@ $contatosFiltrados = array_slice($contatosFiltrados, $offset, $limit);
                 <li onclick="window.location.href='pages/contatos.php'">
                     <i class="fa-regular fa-address-book"></i>
                     <span class="lbl-menu hide"> Meus Contatos</span>
+                </li>
+                <li onclick="window.location.href='index.php'">
+                <i class="fa-solid fa-heart"></i>
+                    <span class="lbl-menu hide"> Favoritos</span>
                 </li>
             </ul>
         </nav>
