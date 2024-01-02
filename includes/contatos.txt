@@ -1,0 +1,11 @@
+{"nome":"Ceir Alzor","nomeSocial":"","apelido":"Cê","cpf":"963.048.860-47","telefone":"(99) 3660-0966","email":"ives3687@uorak.com","favorito":"on"}
+{"nome":"Baelr","nomeSocial":"Inru","apelido":"","cpf":"242.661.750-00","telefone":"(63) 3555-1435","email":"zhana904@uorak.com","favorito":null}
+
+{"id":"65945f661e781","nome":"Oscus Mipon","nomeSocial":"","apelido":"Ficeu","cpf":"","telefone":"(54) 32919-349","email":"raelene8593@uorak.com","favorito":"on"}
+{"id":"6594602422ad3","nome":"Daiki Nigar","nomeSocial":"","apelido":"","cpf":"","telefone":"(83) 22681-824","email":"estanislada6470@uorak.com","favorito":"on"}
+{"id":"659460fe6e819","nome":"Kaymus Suday","nomeSocial":"","apelido":"Kayus","cpf":"","telefone":"(13) 93895-3865","email":"hadj9305@uorak.com","favorito":""}
+{"id":"6594615aa7e80","nome":"Souka Clilye","nomeSocial":"","apelido":"","cpf":"","telefone":"(62) 93329-2711","email":"lyna8143@uorak.com","favorito":""}
+{"id":"659461f5a17f6","nome":"Muhia Sefli","nomeSocial":"","apelido":"","cpf":"","telefone":"(66) 92166-5756","email":"elba2961@uorak.com","favorito":"on"}
+{"id":"6594622bace96","nome":"Leuzo Pluma","nomeSocial":"","apelido":"Xaexe","cpf":"","telefone":"(79) 21895-285","email":"gyongyi2710@uorak.com","favorito":"on"}
+{"id":"6594635b70836","nome":"Texal Toeke","nomeSocial":"Razo","apelido":"Raz","cpf":"103.056.900-27","telefone":"(96) 93297-1682","email":"efe8837@uorak.com","favorito":"on"}
+{"id":"659471377d50f","nome":"Arka Pinthir","nomeSocial":"","apelido":"Pin","cpf":"226.089.190-06","telefone":"(54) 32919-349","email":"carola9042@uorak.com","favorito":"on"}
