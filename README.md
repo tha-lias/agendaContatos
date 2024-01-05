@@ -91,6 +91,3 @@ Essas são algumas capturas de tela do projeto para dar uma ideia visual do que 
 2. Lembre-se de configurar o seu ambiente PHP para ter acesso a todas as funcionalidades.
 3. Abra a página `index.php` para começar.
 
-## 🔗 Link :
-https://tha-lias.github.io/agendaContatos/
-
